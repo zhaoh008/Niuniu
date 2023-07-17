@@ -1,6 +1,7 @@
-#pragma once
+﻿#pragma once
 #include "Core.h"
-namespace Niuniu{
+#include "Events/Event.h"
+namespace Niuniu {
 
 	class NN_API Application
 	{
@@ -8,7 +9,7 @@ namespace Niuniu{
 		Application();
 
 		virtual ~Application();
-		
+
 		void Run();
 	};
 

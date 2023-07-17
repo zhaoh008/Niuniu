@@ -1,4 +1,4 @@
-workspace "Niuniu"
+﻿workspace "Niuniu"
 	architecture "x64"
 
 	configurations
@@ -26,7 +26,7 @@ project "Niuniu"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"vendor/spdlog/include"
 	}
 
 	filter "system:windows"
@@ -73,7 +73,7 @@ project "Sandbox"
 
 	includedirs
 	{
-		"Niuniu/vendor/spdlog/include",
+		"vendor/spdlog/include",
 		"Niuniu/src"
 	}
 

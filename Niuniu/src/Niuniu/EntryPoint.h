@@ -1,19 +1,20 @@
-#pragma once
+ï»¿#pragma once
 #include "Core.h"
+#include "Events/Event.h"
 #include "Log.h"
 
 #ifdef NN_PLATFORM_WINDOWS
-	extern Niuniu::Application* Niuniu::CreateApplication();
+extern Niuniu::Application* Niuniu::CreateApplication();
 
-	int main(int argc, char** argv) {
-		Niuniu::Log::InitLog();
+int main(int argc, char** argv) {
+	Niuniu::Log::InitLog();
 
-		NN_CORE_WARN("ÒýÇæÈÕÖ¾ÏµÍ³³õÊ¼»¯");	
-		NN_INFO("¿Í»§¶Ë´òÓ¡ÈÕÖ¾");
-		auto app=Niuniu::CreateApplication();
-		app->Run();
-		delete app;
-	}
+	NN_CORE_WARN("å¼•æ“Žæ—¥å¿—ç³»ç»Ÿåˆå§‹åŒ–...");
+	NN_INFO("å®¢æˆ·ç«¯æ‰“å°æ—¥å¿—æµ‹è¯•...");
+	auto app = Niuniu::CreateApplication();
+	app->Run();
+	delete app;
+}
 #else
-	#error Niuniu only support windows!
+#error Niuniu only support windows!
 #endif // NN_PLATFORM_WINDOWS

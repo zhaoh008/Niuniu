@@ -1,4 +1,6 @@
-#include "Application.h"
+﻿#include "Application.h"
+#include "Events\ApplicationEvent.h"
+#include "Log.h"
 
 namespace Niuniu {
 	Application::Application()
@@ -13,7 +15,17 @@ namespace Niuniu {
 
 	void Application::Run()
 	{
-		while(true);
+		WindowResizeEvent e(1280, 720);
+		if (e.IsInCategory(EventCategoryApplication))
+		{
+			NN_INFO(e);
+		}
+		if (e.IsInCategory(EventCategoryInput))
+		{
+			NN_INFO(e);
+		}
+
+		while (true);
 	}
 
 }
