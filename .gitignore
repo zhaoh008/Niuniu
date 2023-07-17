@@ -4,6 +4,6 @@ bin/*
 bin-int/*
 *.user
 /*.sln
-/vendor
 /Niuniu/*.filters
 /Niuniu/Niuniu.vcxproj
+/vendor/spdlog/*
