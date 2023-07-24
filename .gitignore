@@ -7,3 +7,4 @@ bin-int/*
 /Niuniu/*.filters
 /Niuniu/Niuniu.vcxproj
 /vendor/spdlog/*
+/Niuniu/vendor

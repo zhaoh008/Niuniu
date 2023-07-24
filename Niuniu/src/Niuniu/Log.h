@@ -1,8 +1,9 @@
 ﻿#pragma once
-#include <memory>
+
 #include "Core.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
+
 namespace Niuniu {
 	class NN_API Log
 	{

@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include "Event.h"
-#include <sstream>
-#include <iosfwd>
+
 
 
 namespace Niuniu {
@@ -13,19 +12,6 @@ namespace Niuniu {
 		inline int GetKeyCode() const { return m_KeyCode; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
-
-			EventType GetEventType() const override
-		{
-
-		}
-		const char* GetName() const override
-		{
-
-		}
-		std::string ToString() const override
-		{
-
-		}
 	protected:
 		KeyEvent(int keycode)
 			: m_KeyCode(keycode) {}

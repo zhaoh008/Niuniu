@@ -1,9 +1,9 @@
 ﻿#pragma once
 
-#include "Core.h"
-#include <string.h>
-#include <functional>
-#include <iostream>
+#include "nnpch.h"
+#include "Niuniu/Core.h"
+
+
 
 namespace Niuniu {
 

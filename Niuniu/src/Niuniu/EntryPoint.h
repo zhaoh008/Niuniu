@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "Core.h"
+#include "cstdio"
 #include "Events/Event.h"
 #include "Log.h"
 

@@ -10,6 +10,15 @@
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Niuniu/vendor/GLFW/include"
+IncludeDir["Glad"] = "Niuniu/vendor/Glad/include"
+IncludeDir["ImGui"] = "Niuniu/vendor/imgui"
+
+include "Niuniu/vendor/GLFW"
+include "Niuniu/vendor/Glad"
+include "Niuniu/vendor/imgui"
+
 project "Niuniu"
 	location "Niuniu"
 	kind "SharedLib"
@@ -17,6 +26,11 @@ project "Niuniu"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "nnpch.h"
+	pchsource "Niuniu/src/nnpch.cpp"
+
+	
 
 	files
 	{
@@ -26,7 +40,19 @@ project "Niuniu"
 
 	includedirs
 	{
-		"vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
+	}
+	links 
+	{ 
+
+		"GLFW",
+		"Glad",
+		"ImGui",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -37,7 +63,8 @@ project "Niuniu"
 		defines
 		{
 			"NN_PLATFORM_WINDOWS",
-			"NN_BUILD_DLL"
+			"NN_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -65,6 +92,11 @@ project "Sandbox"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	defines
+	{
+			"NN_PLATFORM_WINDOWS"
+	}
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -73,7 +105,7 @@ project "Sandbox"
 
 	includedirs
 	{
-		"vendor/spdlog/include",
+		"Niuniu/vendor/spdlog/include",
 		"Niuniu/src"
 	}
 
