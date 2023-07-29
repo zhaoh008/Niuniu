@@ -1,4 +1,6 @@
-
+[submodule "Niuniu/vendor/spdlog"]
+    path = vendor/spdlog
+    url = https://github.com/gabime/spdlog
 
 [submodule "Niuniu/vendor/glfw"]
     path = Niuniu/vendor/GLFW
